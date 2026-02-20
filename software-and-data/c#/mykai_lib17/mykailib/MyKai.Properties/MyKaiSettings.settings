@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mykailib.MyKai.Properties" GeneratedClassName="MyKaiSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="kaiDataWorkspaceRelativePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\workspace</Value>
+    </Setting>
+    <Setting Name="kaiDataDatasetRelativePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\datasets</Value>
+    </Setting>
+    <Setting Name="kaiDataGesturPatternRelativePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\patterns</Value>
+    </Setting>
+    <Setting Name="kaiManagerKAISDKRegistrySubkey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SOFTWARE\Microsoft\Windows\CurrentVersion\Run</Value>
+    </Setting>
+    <Setting Name="kaiManagerKAIDSKProccessName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Kai.SDK</Value>
+    </Setting>
+    <Setting Name="kaiManagerMsgCanNotRunKaiSDK" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Can not run Kai.SDK. Kibasic did not find the SDK’s registry key or the SDK.exe file.</Value>
+    </Setting>
+    <Setting Name="kaiGesture2DAllowedAnglePIDivider" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingRedrawMargin" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingStdCursorSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">32</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingCrossmarkSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingMaxStabilizingMarkRadius" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingStabilizingCursorRedrawInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingMinStabilizingMarkRadius" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">33</Value>
+    </Setting>
+    <Setting Name="kaiG2DStateMachineMaxStabilizingCounterValue" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="kaiWFDrawingDefaultMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="kaiConnectionTimeoutCounterMax" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="kaiGesture2DDefaultDecimationFrequency" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="kaiSDKAuthProcessName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="kaiSDKAuthProcessSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">qwerty</Value>
+    </Setting>
+    <Setting Name="kaiSDKWasStopped" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The KAI SDK is now stpped. Click the "Run Kai SDK" button to continue. </Value>
+    </Setting>
+    <Setting Name="kaiWatchdogTimerInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="kaiGestureLowPassFilterApplyOnEnding" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="kaiGestureLowPasFilterNumberOfEndingPoints" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="kaiGestureLowPassFilterFactor" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.1</Value>
+    </Setting>
+    <Setting Name="kaiSimpleProfilerFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\workspace\simple-profiler\last-instant-profile.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

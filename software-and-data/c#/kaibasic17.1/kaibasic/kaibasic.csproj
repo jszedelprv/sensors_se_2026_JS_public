@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B1AE3D8-D3E3-4F2B-9002-0BCA08728593}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>kaibasic</RootNamespace>
+    <AssemblyName>kaibasic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\Kai basic.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csv, Version=2.0.93.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Csv.2.0.93\lib\net40\Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="Kai.Module.WebSocketModule, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kai.WebSocketModule.1.0.0.9\lib\net45\Kai.Module.WebSocketModule.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mykailib">
+      <HintPath>..\..\mykai_lib17\mykailib\bin\Debug\mykailib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectTK">
+      <HintPath>..\ObjectTK\ObjectTK\bin\Debug\ObjectTK.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectTK.Tools">
+      <HintPath>..\ObjectTK\ObjectTK.Tools\bin\Debug\ObjectTK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectTKC">
+      <HintPath>..\ObjectTK\ObjectTK.Compiler\bin\Debug\ObjectTKC.exe</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.1589.5942\lib\NET40\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.1.1.1589.5942\lib\NET40\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharpFork.1.0.4.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FrmDesktopMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDesktopMode.Designer.cs">
+      <DependentUpon>FrmDesktopMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDesktopMode.Initializer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDesktopMode.Kai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Kai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Initializer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.RawData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.RawData.Designer.cs">
+      <DependentUpon>FrmMain.RawData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Gestures2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Gestures2D.Designer.cs">
+      <DependentUpon>FrmMain.Gestures2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KaiMessageLogUserControlLocal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\KaiMessageLogUserControlLocal.Designer.cs">
+      <DependentUpon>KaiMessageLogUserControlLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyShapeVisualizer\Builders\BuilderOfGLControlShapeVisualizer.cs" />
+    <Compile Include="ObjectTK\Shaders\ExampleProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\GravityProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\ParallaxProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\SimpleColorProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\SimpleTextureProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\SkyboxProgram.cs" />
+    <Compile Include="ObjectTK\Shaders\TextureGridProgram.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyShapeVisualizer\GLControlShapeVisualizer.cs" />
+    <EmbeddedResource Include="Forms\FrmDesktopMode.resx">
+      <DependentUpon>FrmDesktopMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.RawData.resx">
+      <DependentUpon>FrmMain.RawData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.Gestures2D.resx">
+      <DependentUpon>FrmMain.Gestures2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ObjectTK\Data\Shaders\ExampleShader.glsl" />
+    <None Include="ObjectTK\Data\Shaders\Gravity.glsl" />
+    <None Include="ObjectTK\Data\Shaders\Parallax.glsl" />
+    <None Include="ObjectTK\Data\Shaders\SimpleColor.glsl" />
+    <None Include="ObjectTK\Data\Shaders\SimpleTexture.glsl" />
+    <None Include="ObjectTK\Data\Shaders\Skybox.glsl" />
+    <None Include="ObjectTK\Data\Shaders\TextureGrid.glsl" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Actions-exit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valfa.bmp" />
+    <None Include="Resources\cursorUnstable.bmp" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\gesture_cursor_unstable_48.bmp" />
+    <None Include="Resources\Images\cursor_stable_32.png" />
+    <None Include="Resources\Images\cursor_unstable_32.png" />
+    <None Include="Resources\Images\cursor_empty_32.bmp" />
+    <None Include="Resources\cursor_notdrawing_32.png.bmp" />
+    <None Include="Resources\Images\cursor_notdrawing_32.png" />
+    <None Include="Resources\cursor_stable_32.bmp" />
+    <None Include="bin\Debug\Data\Gestures\Set 01 - ICCHP 2020\Patterns\alpha-01.bmp" />
+    <None Include="Resources\aplphavert-01.bmp" />
+    <None Include="Resources\empty_gesture.bmp" />
+    <None Include="Resources\aplphavert-011.bmp" />
+    <None Include="Resources\aplphavert-0111.bmp" />
+    <None Include="Resources\Images\cursor_unstable_321.png" />
+    <None Include="Resources\Images\cursor_empty_321.bmp" />
+    <None Include="Resources\Images\cursor_stable_321.png" />
+    <Content Include="Resources\Images\Kai basic.ico" />
+    <Content Include="ObjectTK\Data\Textures\viacara_kai_logo_red.png" />
+    <Content Include="Resources\Sounds\end_draw.wav" />
+    <Content Include="Resources\Sounds\stable.wav" />
+    <Content Include="Resources\Sounds\start_stop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\mocapture_lib17\mocapture\mocapture\mocapture.csproj">
+      <Project>{a7afc08e-b808-4df2-aafa-46e3e15f15c6}</Project>
+      <Name>mocapture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /Q /S "$(TargetDir)Data"
+xcopy "$(ProjectDir)ObjectTK\Data" "$(TargetDir)Data" /E /R /K /Y /I /D /H
+"$(TargetDir)ObjectTKC.exe" "$(TargetPath)"
+xcopy "$(ProjectDir)Resources\Sounds" "$(TargetDir)Sounds" /E /R /K /Y /I /D /H</PostBuildEvent>
+  </PropertyGroup>
+</Project>

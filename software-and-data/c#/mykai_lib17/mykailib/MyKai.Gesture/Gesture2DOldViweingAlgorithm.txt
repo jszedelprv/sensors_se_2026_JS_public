@@ -1,0 +1,64 @@
+﻿    //    if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.Stopped) // Do not draw anything
+    //        return;
+
+    //    int x = ViewedCursor.Data.PositionInPixels.X;
+    //    int y = ViewedCursor.Data.PositionInPixels.Y;
+
+    //    if ( x > 0 && x < ViewedCursor.Data.Viewport.Width && y > 0 && y < ViewedCursor.Data.Viewport.Height )
+    //    {
+    //        Pen pen = new Pen(Color.Black);
+    //        SolidBrush brush = new SolidBrush(Color.Black);
+
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.Unstable)
+    //            graphics.DrawImage(kaibasic.Properties.Resources.gesture_cursor_unstable, x - stdCursorSize / 2, y - stdCursorSize / 2);
+
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.Stabilizing)
+    //        {
+    //            pen.Color = Color.Black;
+    //            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+    //            brush.Color = Color.DarkGreen;
+
+    //            int radius = stabilizingMarkRadius - ViewedCursor.StateMachine.InternalVariables.StabilizingFrameCounter / 2;
+    //            radius = radius<0 ?  0 : radius;
+
+    //            graphics.FillEllipse(brush, x - stdCursorSize / 2, y - stdCursorSize / 2, stdCursorSize, stdCursorSize);                   
+
+    //            if (radius % 2 == 0)
+    //            {
+    //                graphics.DrawRectangle(pen, x - radius/2, y - radius/2, radius, radius);
+    //            }
+
+    //        }
+
+    //        if ( ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.JustStabilized)
+    //        {
+    //            ClearCursorWidth(stabilizingMarkRadius, stabilizingMarkRadius);
+    //            PlaySound(@".\Sounds\stable.wav");
+    //        }
+
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.Stable)
+    //        {
+    //            ClearCursorWidth(crossmarkSize, crossmarkSize);                   
+
+    //            pen.Color = Color.Black;
+
+    //            graphics.DrawLine(pen, x, y-crossmarkSize/2, x, y+crossmarkSize/2);
+    //            graphics.DrawLine(pen, x-crossmarkSize/2, y, x+crossmarkSize/2, y);
+    //        }              
+
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.Drawing)
+    //        {
+    //            DrawGestureLine();
+    //        }                
+
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.DrawingCompeletition)
+    //        {
+    //            if(!ViewedCursor.Stabilizer.IsStable())
+    //                DrawGestureLine();
+    //        }
+    //        if (ViewedCursor.StateMachine.State == Gesture2DCursorStateMachine.StateType.JustEndedDrawing)
+    //        {
+    //            PlaySound(@".\Sounds\end_draw.wav");
+    //            graphics.Clear(Color.White);
+    //        }
+    //    }

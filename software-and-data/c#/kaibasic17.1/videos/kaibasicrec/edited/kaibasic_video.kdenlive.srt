@@ -1,0 +1,4 @@
+1
+0:13:26,800 --> 0:13:35,366
+Błąd! Trzeba wyłączyć sensor (jeśli jest włączony), ustawić go równolegle do ekranu, i włączyć.
+

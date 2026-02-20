@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDA0F8FA-7C68-475A-AA03-73287EB84C1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>mykailib</RootNamespace>
+    <AssemblyName>mykailib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csv, Version=2.0.93.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Csv.2.0.93\lib\net40\Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="Kai.Module.WebSocketModule, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kai.WebSocketModule.1.0.0.9\lib\net45\Kai.Module.WebSocketModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>packages\WebSocketSharpFork.1.0.4.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyKai.Communicator\FormKaiCommunicator.cs" />
+    <Compile Include="MyKai.Communicator\IKaiCommunicable.cs" />
+    <Compile Include="MyKai.Communicator\IKaiCommunicator.cs" />
+    <Compile Include="MyKai.Communicator\KaiCommunicatorBase.cs" />
+    <Compile Include="MyKai.Communicator\KaiCommunicatorTypes.cs" />
+    <Compile Include="MyKai.Data\Abstract.Entity\IKaiDataEntity.cs" />
+    <Compile Include="MyKai.Data\Abstract.Entity\KaiDataEntityBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Entity\KaiDataFileStoredEntityBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Entity\KaiDataFilterBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Entity\KaiDataImageEntityBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Object\KaiDataFileStoredObjectBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Object\KaiDataFolderObjectBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Object\KaiDataImageObjectBase.cs" />
+    <Compile Include="MyKai.Data\Abstract.Object\KaiDataObjectBase.cs" />
+    <Compile Include="MyKai.Data\Attributes\KaiDataColumnAttribute.cs" />
+    <Compile Include="MyKai.Data\Attributes\KaiDataEntityAttribute.cs" />
+    <Compile Include="MyKai.Data\Attributes\KaiDataFileEntityAttribute.cs" />
+    <Compile Include="MyKai.Data\Attributes\KaiDataMasterEntityAttribute.cs" />
+    <Compile Include="MyKai.Data\Collections\KaiDataControlCollection.cs" />
+    <Compile Include="MyKai.Data\Collections\KaiDataEntityCollection.cs" />
+    <Compile Include="MyKai.Data\Collections\KaiDataFieldCollection.cs" />
+    <Compile Include="MyKai.Data\Collections\KaiDataFilterCollection.cs" />
+    <Compile Include="MyKai.Data\Collections\KaiDataObjectCollection.cs" />
+    <Compile Include="MyKai.Data\Entities\Entities.Builders\BuilderOfGestureImage.cs" />
+    <Compile Include="MyKai.Data\Entities\Entities.Builders\BuilderOfGesturePattern.cs" />
+    <Compile Include="MyKai.Data\Entities\Entities.Builders\BuilderOfImageDataset.cs" />
+    <Compile Include="MyKai.Data\Entities\Entities.Builders\BuilderOfIndividual.cs" />
+    <Compile Include="MyKai.Data\Entities\GestureImage.cs" />
+    <Compile Include="MyKai.Data\Entities\GesturePattern.cs" />
+    <Compile Include="MyKai.Data\Entities\ImageDataset.cs" />
+    <Compile Include="MyKai.Data\Entities\Individual.cs" />
+    <Compile Include="MyKai.Data\Helpers\Exceptions\InvalidPointsFileContentException.cs" />
+    <Compile Include="MyKai.Data\Helpers\Exceptions\InvalidKaiDataObject.cs" />
+    <Compile Include="MyKai.Data\Helpers\Helpers.Builders\BuilderOfSubstringFilter.cs" />
+    <Compile Include="MyKai.Data\Helpers\Interfaces\IKaiDataFileReader.cs" />
+    <Compile Include="MyKai.Data\Helpers\Helpers.Builders\KaiDataBuilderBase.cs" />
+    <Compile Include="MyKai.Data\Helpers\Interfaces\IKaiDataSingleObjectFileReader.cs" />
+    <Compile Include="MyKai.Data\Helpers\Interfaces\IKaiDataSingleObjectFileWriter.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataControlSearcher.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataCSVFileReader.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataFactory.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataImagePointsCSVFileReader.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataImagePointsCSVFileWriter.cs" />
+    <Compile Include="MyKai.Data\Helpers\KaiDataSubstringFilter.cs" />
+    <Compile Include="MyKai.Data\Workspace\KaiDataWorkspace.cs" />
+    <Compile Include="MyKai.Data\Workspace\KaiDataWorkspace.Find.cs" />
+    <Compile Include="MyKai.Data\Workspace\KaiDataWorkspaceSearcher.cs" />
+    <Compile Include="MyKai.Data\Workspace\Workspace.Builders\BuilderOfEntityRecord.cs" />
+    <Compile Include="MyKai.Facade\BuilderOfMyKaiFacade.cs" />
+    <Compile Include="MyKai.Facade\FacadeComponentHolder.cs" />
+    <Compile Include="MyKai.Facade\FacadeComponentInitializer.cs" />
+    <Compile Include="MyKai.Facade\MyKaiFacade.Action.cs" />
+    <Compile Include="MyKai.Facade\MyKaiFacade.cs" />
+    <Compile Include="MyKai.Facade\MyKaiFacade.Get.cs" />
+    <Compile Include="MyKai.Facade\MyKaiFacade.Query.cs" />
+    <Compile Include="MyKai.Facade\MyKaiFacade.Set.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfDefKaiManager.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfGesture2DCapture.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfGesture2DCursor.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfGesture2DCursorViewWF.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfGestureViewPanelHostedControl.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOFKaiControlNotifier.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfKaiSDKWatchdog.cs" />
+    <Compile Include="MyKai.General\Builders\BuilderOfRichTextBoxEventLoger.cs" />
+    <Compile Include="MyKai.General\Builders\MyKaiBuilderBase.cs" />
+    <Compile Include="MyKai.General\KaiControlNotifier.cs" />
+    <Compile Include="MyKai.General\MyKaiClassCopier.cs" />
+    <Compile Include="MyKai.General\MyKaiClassRegistry.cs" />
+    <Compile Include="MyKai.General\MyKaiFactory.cs" />
+    <Compile Include="MyKai.General\MyKaiFileNameMakerBase.cs" />
+    <Compile Include="MyKai.General\MyKaiImageSaver.cs" />
+    <Compile Include="MyKai.General\MyKaiJPGImageSaver.cs" />
+    <Compile Include="MyKai.General\MyKaiPrefixNumberFileNameMaker.cs" />
+    <Compile Include="MyKai.Gesture\Gesture drawing\ShowBitmap.cs" />
+    <Compile Include="MyKai.Gesture\Gesture drawing\FrmBitmapTestViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyKai.Gesture\Gesture drawing\FrmBitmapTestViewer.Designer.cs">
+      <DependentUpon>FrmBitmapTestViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyKai.Gesture\Gesture drawing\GestureStyles.cs" />
+    <Compile Include="MyKai.Gesture\Gesture drawing\Gesture2DBitmaps.cs" />
+    <Compile Include="MyKai.Gesture\Gesture drawing\ShowImage.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCapture.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCapture.Get.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCapture.Query.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursor.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursorBase.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursorData.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursorStateMachine.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursorViewBaseWF.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DCursorViewWF.cs" />
+    <Compile Include="MyKai.Gesture\Gesture drawing\Gesture2DDrawer.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DIsStableChecker.cs" />
+    <Compile Include="MyKai.Gesture\Gesture2DSequenceToPointConverter.cs" />
+    <Compile Include="MyKai.Gesture\View controls\GestureViewFormOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyKai.Gesture\View controls\GestureViewFormOverlayTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyKai.Gesture\View controls\GestureViewPanelHostedControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyKai.Gesture\View controls\CursorViewPaintHandlerComponent.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IDrawableOnPaint.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DCursor.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DCaptureGet.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DCaptureQuery.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IKaiGestureViewableControl.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGestureViewPanelHostedControl.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DCapture.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DCursorViewWF.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGesture2DIsStableChecker.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IGetureViewPaintHandlerComponent.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\IInitiable.cs" />
+    <Compile Include="MyKai.Gesture\Interfaces\ILimited.cs" />
+    <Compile Include="MyKai.GUI\Interfces\IKaiMessageLogUserControl.cs" />
+    <Compile Include="MyKai.GUI\Interfces\IKaiLoggingAwareClass.cs" />
+    <Compile Include="MyKai.GUI\Interfces\IKaiStatusViewingControl.cs" />
+    <Compile Include="MyKai.GUI\KaiMessageLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyKai.GUI\KaiMessageLogUserControl.Designer.cs">
+      <DependentUpon>KaiMessageLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyKai.Manager\DefKaiManager.cs" />
+    <Compile Include="MyKai.Manager\Interfaces\IKaiSDKWatchdog.cs" />
+    <Compile Include="MyKai.Manager\Interfaces\IKaiEventLogger.cs" />
+    <Compile Include="MyKai.Manager\Interfaces\IKaiManager.cs" />
+    <Compile Include="MyKai.Manager\Interfaces\IKaiStateChangedUpdatableClass.cs" />
+    <Compile Include="MyKai.Manager\KaiEventBase.cs" />
+    <Compile Include="MyKai.Manager\KaiEventFactory.cs" />
+    <Compile Include="MyKai.Manager\KaiEventHandler.cs" />
+    <Compile Include="MyKai.Manager\KaiEventLoggerBase.cs" />
+    <Compile Include="MyKai.Manager\KaiEventRegistry.cs" />
+    <Compile Include="MyKai.Manager\KaiEvents.cs" />
+    <Compile Include="MyKai.Manager\KaiEventStringAdapter.cs" />
+    <Compile Include="MyKai.Manager\KaiManagerBase.cs" />
+    <Compile Include="MyKai.Manager\KaiRichTextEventLogger.cs" />
+    <Compile Include="MyKai.Manager\KaiSDKWatchdog.cs" />
+    <Compile Include="MyKai.Manager\KaiSession.cs" />
+    <Compile Include="MyKai.Manager\KaiSession.Query.cs" />
+    <Compile Include="MyKai.Manager\KaiSession.State.cs" />
+    <Compile Include="MyKai.Properties\MyKaiResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyKaiResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MyKai.Properties\MyKaiSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MyKaiSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MyKai.Properties\MyKaiStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MyKaiStrings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MyKai.SimpleProfiler\MyKaiSimpleProfiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MyKai.Properties\MyKaiSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MyKaiSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MyKai.Properties\MyKaiStrings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MyKaiStrings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyKai.Gesture\Gesture2DOldViweingAlgorithm.txt" />
+    <None Include="Resources\Images\cursor_stable_32.png" />
+    <None Include="Resources\Images\cursor_unstable_32.png" />
+    <None Include="Resources\Images\cursor_empty_32.bmp" />
+    <None Include="Resources\cursor_empty_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyKai.Gesture\Gesture drawing\FrmBitmapTestViewer.resx">
+      <DependentUpon>FrmBitmapTestViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyKai.GUI\KaiMessageLogUserControl.resx">
+      <DependentUpon>KaiMessageLogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyKai.Properties\MyKaiResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyKaiResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\mocapture_lib17\mocapture\mocapture\mocapture.csproj">
+      <Project>{a7afc08e-b808-4df2-aafa-46e3e15f15c6}</Project>
+      <Name>mocapture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

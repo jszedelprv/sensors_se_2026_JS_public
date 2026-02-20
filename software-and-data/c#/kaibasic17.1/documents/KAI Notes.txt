@@ -1,0 +1,82 @@
+- ubrać diodą i gniazdkiem w strone palców
+- dokładnie skalibrować (koniczna jest gimnastyka i sprawdzenie)
+- wyłączyć KAI CC, bo dwa programy na raz nie działają
+- kasować loga, bo może urosnąć, można zainicjować loga
+	private const string logFile = ".\\log.txt";
+	File.Delete(logFile);
+	Log.Init(logFile, Log.Level.Info);
+- inicjacja KaiSDK.Initialise("test", "qwerty"); hasło na sztywno !
+- identyfikatory gestów
+	namespace Kai.Module
+	{
+    		public enum Gesture
+    		{
+        		SwipeUp = 0,
+        		SwipeDown = 1,
+        		SwipeLeft = 2,
+        		SwipeRight = 3,
+        		SideSwipeUp = 4,
+        		SideSwipeDown = 5,
+        		SideSwipeLeft = 6,
+        		SideSwipeRight = 7,
+        		Pinch2Begin = 8,
+        		Pinch2End = 9,
+        		GrabBegin = 10,
+        		GrabEnd = 11,
+        		Pinch3Begin = 12,
+        		Pinch3End = 13,
+        		DialBegin = 14,
+        		DialEnd = 15
+    		}
+	}
+- capabilitiesv - jesli nic nie jest ustawione (0) to działają gesty.
+    public enum KaiCapabilities
+    {
+        GestureData = 1,
+        LinearFlickData = 2,
+        FingerShortcutData = 4,
+        FingerPositionalData = 8,
+        PYRData = 16,
+        QuaternionData = 32,
+        AccelerometerData = 64,
+        GyroscopeData = 128,
+        MagnetometerData = 256
+    }
+}
+
+- wrapery dla OpenGL
+	- OpenGl.NET - kiepsko z dokumentacją, brak typowych "starych dobrych" funkcji, jest kontrolka dla WinForms
+	- OpenTK - lepsza dokumentacja, nowe tylko .NET Core, kontrolka WinForms działa z wersją 3.1, pod 4.72 działa max OpenTK 3.3.x
+	- zadziałała z wersją 4.3.0 1.1.1589.5942 z 07182014 - taka jak jest w obecnym ObjectTK
+	- ObjectTK - fajna nakładka z obiektami do korzystania z OpenTK
+
+- integracja aplikacji w .NET 4.72 co po kolei (do powtórzenia w aplikacji docelowej)
+	
+	-- OpenTK i kontrolka w wersji zgodnyej z najnowszym (tym ściągniętym z GitHuba do własnej kompilacji) i inne
+		Zainstalować OpenTK.GLControl v3.1.0 (NuGet)
+		Zainstaluje się OpenTK v3.1.0
+		Zmienić wersję tego pakietu na v1.1.1589.5942
+		Sprawdzic kontrolkę (czy jest w Toolbokise i czy można ją nałożyć na formatkę i czy się uruchamia i pokazuje na formatce)
+		Dodac z NuGet log4Net v2.0.3
+	
+	-- ObjectTK (Najnowsza wersja pobrana w  dniu 8.12.2020, będziemy chcieli ją rozbudowywać i kompilować we własnym zakresie, bez NuGet)
+		Potrzebne sklonowoane repo (ObjectTK, do znalezienia na work/both/apis - https://github.com/opentk/ObjectTK - nie wiadomo czy coś sie nie zmieniło)
+		Wkopoiować repo (bez plików gita) do katalogu solucji docelowej aplikacji otworzyć ObjectTK.sln (upgrade w razie czego) i Rebuild Sollution
+		Wiekszość funkcji ObjectTK jest w .dll z projaktów ObjectTK i ObjectTK.Tools
+		Przy zmianie programów shaderów potrzebna jest kompilacja do tego służy projekt ObjectTK.Compiler, który produkuje ObjectTKC.exe
+		Program jest potem wywoływany jako post-build event (zob. dalej)
+		Część funkcji jest w programie Examples i trzeba sobie to już włączyć do głownego projektu aplikacji
+		Dołożyć zależności do ObjectTK.dll i ObjectTK.Tools.dll (trochę pymitywne, może kiedyś lepsze rozwiązanie)
+		Jeśli chcemy zmieniać programy shadery i tekstury trzeba skopiować odpowiednie dane do katalogu docelowego po każdym bulidzie i dodatkowo
+			skompilować programy shaderów za pomocą ObjectTKC.exe, robi to następujący zestaw komend, które trzeba dodać jako post-build event
+			we właściwościach projektu:
+				rd /Q /S "$(TargetDir)Data"
+				xcopy "$(ProjectDir)ObjectTK\Data" "$(TargetDir)Data" /E /R /K /Y /I /D /H
+				"$(TargetDir)ObjectTKC.exe" "$(TargetPath)"
+
+	-- Podstawowe funkcje na kontrolce: można sprawdzic podstawowe funkcje
+ 	-- Dodanie niezbędnych elementów ObjectTK.Examples
+		Stworzyć katalog w solucji, np: ObjectTK w nim kataogi Data i Shaders, a w Data też Shaders i Textures
+		Dodać jako Existing items zawartość z tychże kataogów w orygninalnym ObjectTK
+		
+	

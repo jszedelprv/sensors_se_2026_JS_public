@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mykailib.MyKai.Properties" GeneratedClassName="MyKaiStrings">
+  <Profiles />
+  <Settings>
+    <Setting Name="msgConnectionSuccessful" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Connection successful.</Value>
+    </Setting>
+    <Setting Name="msgKaiNotResponding" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Kai is not responding. Check if the dongle is inserted, KaiSDK is running, Kai is on and connected.</Value>
+    </Setting>
+    <Setting Name="strKaiMessageboxHeader" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MyKai library message:</Value>
+    </Setting>
+    <Setting Name="msgConnectionWait" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Trying to connect</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
