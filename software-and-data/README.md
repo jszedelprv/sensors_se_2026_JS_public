@@ -5,4 +5,4 @@ workspace/datasets/sensors-2026-wirst-forearm contains the dataset:
 ../samples/patterns - gesture prompts,
 ..samples/as-captured - gestures without smoothing, 
 ../samples/beziers - smoothed gestures, 
-../samoles/points - coordinatest of gestre trails
+../samoles/points - coordinates of gestre trails
